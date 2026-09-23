@@ -15,7 +15,7 @@
     --gold-light: #e0bf78;
     --cream: #f7f3eb;
     --white: #ffffff;
-    --muted: #77736c;
+    --muted: #5f5b55;
     --border: #e9e4da;
     --light-bg: #fbf9f5;
 }
@@ -78,7 +78,7 @@ p {
 
 .section-label {
     display: inline-block;
-    color: var(--gold);
+    color: #8a6a2f;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 2.5px;
@@ -508,10 +508,14 @@ p {
 }
 
 .pricing-top > span {
-    color: var(--gold);
+    color: #8a6a2f;
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 1.5px;
+}
+
+.pricing-card.featured .pricing-top > span {
+    color: var(--gold-light);
 }
 
 .pricing-card h3 {
@@ -604,8 +608,11 @@ p {
     color: rgba(255, 255, 255, 0.9);
 }
 
-.testimonial-card h4 {
+.testimonial-name {
+    font-family: "Playfair Display", serif;
     font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
     margin: 25px 0 5px;
 }
 
@@ -889,43 +896,7 @@ p {
 
 
 /* =========================================
-   14. SCROLL TO TOP
-========================================= */
-
-.scroll-top {
-    position: fixed;
-    right: 25px;
-    bottom: 25px;
-    width: 45px;
-    height: 45px;
-    border: none;
-    background: var(--gold);
-    color: var(--dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(15px);
-    transition: all 0.3s ease;
-    z-index: 999;
-}
-
-.scroll-top.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.scroll-top:hover {
-    background: var(--gold-light);
-    transform: translateY(-3px);
-}
-
-
-/* =========================================
-   15. RESPONSIVE — TABLET
+   14. RESPONSIVE — TABLET
 ========================================= */
 
 @media (max-width: 991.98px) {
@@ -979,7 +950,7 @@ p {
 
 
 /* =========================================
-   16. RESPONSIVE — MOBILE
+   15. RESPONSIVE — MOBILE
 ========================================= */
 
 @media (max-width: 767.98px) {
@@ -1094,7 +1065,7 @@ p {
 
 
 /* =========================================
-   17. SMALL MOBILE
+   16. SMALL MOBILE
 ========================================= */
 
 @media (max-width: 419.98px) {
