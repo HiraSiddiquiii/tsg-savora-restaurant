@@ -1,0 +1,1147 @@
+/* =========================================
+   SAVORA — RESTAURANT LANDING PAGE
+   Custom CSS
+========================================= */
+
+
+/* =========================================
+   1. ROOT VARIABLES
+========================================= */
+
+:root {
+    --dark: #171512;
+    --dark-2: #211e19;
+    --gold: #c9a45c;
+    --gold-light: #e0bf78;
+    --cream: #f7f3eb;
+    --white: #ffffff;
+    --muted: #77736c;
+    --border: #e9e4da;
+    --light-bg: #fbf9f5;
+}
+
+
+/* =========================================
+   2. GLOBAL
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "DM Sans", sans-serif;
+    color: var(--dark);
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Playfair Display", serif;
+}
+
+p {
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   3. COMMON CLASSES
+========================================= */
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section-heading h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   4. BUTTONS
+========================================= */
+
+.btn {
+    border-radius: 0;
+    padding: 13px 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--dark);
+    border: 1px solid var(--gold);
+}
+
+.btn-gold:hover {
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+    color: var(--dark);
+    transform: translateY(-2px);
+}
+
+.btn-outline-light {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    color: var(--white);
+}
+
+.btn-outline-light:hover {
+    background: var(--white);
+    color: var(--dark);
+    border-color: var(--white);
+}
+
+
+/* =========================================
+   5. NAVBAR
+========================================= */
+
+.navbar {
+    padding: 18px 0;
+    background: rgba(23, 21, 18, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    color: var(--white);
+    font-family: "Playfair Display", serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.navbar-brand:hover {
+    color: var(--gold);
+}
+
+.navbar-nav {
+    gap: 8px;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 12px !important;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--gold-light);
+}
+
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 2px;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 7px 9px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+
+/* =========================================
+   6. HERO
+========================================= */
+
+.hero-section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    background-image: url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=2000&q=90");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--white);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(23, 21, 18, 0.92) 0%,
+            rgba(23, 21, 18, 0.72) 45%,
+            rgba(23, 21, 18, 0.35) 100%
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 80px;
+}
+
+.hero-label {
+    display: inline-block;
+    color: var(--gold-light);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero-section h1 {
+    font-size: clamp(3.2rem, 7vw, 6.5rem);
+    line-height: 0.98;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.hero-text {
+    max-width: 580px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.05rem;
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 45px;
+}
+
+.hero-info div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.88rem;
+}
+
+.hero-info i {
+    color: var(--gold);
+}
+
+
+/* =========================================
+   7. ABOUT
+========================================= */
+
+.about-section {
+    background: var(--white);
+}
+
+.about-image-wrapper {
+    position: relative;
+    padding-right: 35px;
+    padding-bottom: 35px;
+}
+
+.about-image {
+    width: 100%;
+    height: 540px;
+    object-fit: cover;
+}
+
+.about-image-wrapper::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 75%;
+    height: 75%;
+    border: 1px solid var(--gold);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.about-image {
+    position: relative;
+    z-index: 1;
+}
+
+.experience-badge {
+    position: absolute;
+    left: -20px;
+    bottom: 45px;
+    z-index: 2;
+    background: var(--gold);
+    color: var(--dark);
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.experience-badge strong {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.experience-badge span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-top: 5px;
+}
+
+.about-section h2 {
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.about-section p {
+    color: var(--muted);
+}
+
+.about-stats {
+    display: flex;
+    gap: 60px;
+    margin-top: 35px;
+}
+
+.about-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-stats strong {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    color: var(--dark);
+}
+
+.about-stats span {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+
+/* =========================================
+   8. SERVICES
+========================================= */
+
+.services-section {
+    background: var(--cream);
+}
+
+.service-card {
+    height: 100%;
+    background: var(--white);
+    padding: 35px 28px;
+    border: 1px solid var(--border);
+    transition: all 0.35s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: 0 20px 45px rgba(23, 21, 18, 0.09);
+}
+
+.service-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cream);
+    color: var(--gold);
+    font-size: 1.35rem;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 22px;
+}
+
+.service-card a {
+    color: var(--dark);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.service-card a i {
+    color: var(--gold);
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+}
+
+.service-card a:hover i {
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   9. MENU / PRICING
+========================================= */
+
+.menu-section {
+    background: var(--white);
+}
+
+.pricing-card {
+    height: 100%;
+    padding: 40px 32px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(23, 21, 18, 0.1);
+}
+
+.pricing-card.featured {
+    background: var(--dark);
+    color: var(--white);
+    border-color: var(--dark);
+    transform: translateY(-10px);
+}
+
+.pricing-card.featured:hover {
+    transform: translateY(-15px);
+}
+
+.popular-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--gold);
+    color: var(--dark);
+    padding: 8px 15px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.pricing-top > span {
+    color: var(--gold);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.pricing-card h3 {
+    font-size: 2rem;
+    margin: 15px 0 10px;
+}
+
+.price {
+    font-family: "Playfair Display", serif;
+    font-size: 2.7rem;
+    margin-bottom: 8px;
+}
+
+.price sup {
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.pricing-top p {
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin-bottom: 30px;
+}
+
+.pricing-card.featured .pricing-top p {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+}
+
+.pricing-card li {
+    padding: 11px 0;
+    border-bottom: 1px solid var(--border);
+    color: #5e5a54;
+    font-size: 0.88rem;
+}
+
+.pricing-card.featured li {
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.pricing-card li i {
+    color: var(--gold);
+    margin-right: 10px;
+}
+
+.pricing-card.featured .btn-outline-dark {
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* =========================================
+   10. TESTIMONIALS
+========================================= */
+
+.reviews-section {
+    background: var(--dark);
+    color: var(--white);
+}
+
+.reviews-section .section-heading p {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.testimonial-card {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 70px 80px;
+}
+
+.stars {
+    color: var(--gold);
+    letter-spacing: 5px;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.testimonial-card p {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.testimonial-card h4 {
+    font-size: 1.1rem;
+    margin: 25px 0 5px;
+}
+
+.testimonial-card span {
+    color: var(--gold-light);
+    font-size: 0.8rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%;
+}
+
+.carousel-indicators {
+    bottom: 15px;
+}
+
+.carousel-indicators button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   11. FAQ
+========================================= */
+
+.faq-section {
+    background: var(--cream);
+}
+
+.faq-wrapper {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.accordion-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+}
+
+.accordion-button {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    color: var(--dark);
+    background: var(--white);
+    padding: 20px 24px;
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--dark);
+    background: var(--white);
+}
+
+.accordion-button::after {
+    background-size: 14px;
+}
+
+.accordion-body {
+    color: var(--muted);
+    line-height: 1.8;
+    padding: 0 24px 22px;
+}
+
+
+/* =========================================
+   12. CONTACT
+========================================= */
+
+.contact-section {
+    background: var(--dark);
+    color: var(--white);
+}
+
+.contact-section h2 {
+    font-size: clamp(2.3rem, 4vw, 3.5rem);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.contact-section > .container > .row > .col-lg-5 > p {
+    color: rgba(255, 255, 255, 0.65);
+    max-width: 500px;
+}
+
+.contact-info {
+    margin-top: 35px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.contact-item > i {
+    color: var(--gold);
+    font-size: 1rem;
+    margin-top: 5px;
+    width: 20px;
+}
+
+.contact-item div {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-item strong {
+    font-size: 0.85rem;
+    margin-bottom: 3px;
+}
+
+.contact-item span {
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 0.85rem;
+}
+
+.reservation-form {
+    background: var(--white);
+    color: var(--dark);
+    padding: 40px;
+}
+
+.reservation-form h3 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.reservation-form > p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 28px;
+}
+
+.reservation-form label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.form-control {
+    border: 1px solid var(--border);
+    border-radius: 0;
+    padding: 12px 14px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.88rem;
+}
+
+.form-control:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 0.15rem rgba(201, 164, 92, 0.15);
+}
+
+.form-error {
+    display: block;
+    min-height: 18px;
+    color: #c0392b;
+    font-size: 0.72rem;
+    margin-top: 4px;
+}
+
+.form-message {
+    display: none;
+    margin-top: 15px;
+    padding: 12px;
+    background: #edf7ed;
+    color: #28752c;
+    font-size: 0.85rem;
+}
+
+.map-wrapper {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-wrapper iframe {
+    display: block;
+}
+
+
+/* =========================================
+   13. FOOTER
+========================================= */
+
+.footer {
+    background: #0e0d0b;
+    color: var(--white);
+    padding: 70px 0 25px;
+}
+
+.footer-brand {
+    display: inline-block;
+    color: var(--white);
+    font-family: "Playfair Display", serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.footer-brand:hover {
+    color: var(--gold);
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.85rem;
+}
+
+.footer-location {
+    margin-top: 20px;
+}
+
+.footer h4 {
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.82rem;
+    transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+    color: var(--gold);
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--dark);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+
+/* =========================================
+   14. SCROLL TO TOP
+========================================= */
+
+.scroll-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    background: var(--gold);
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    background: var(--gold-light);
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   15. RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 991.98px) {
+
+    .section-padding {
+        padding: 80px 0;
+    }
+
+    .navbar-nav {
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+
+    .navbar .nav-link::after {
+        display: none;
+    }
+
+    .navbar .btn-gold {
+        display: inline-block;
+    }
+
+    .hero-section {
+        background-attachment: scroll;
+    }
+
+    .hero-section h1 {
+        font-size: clamp(3rem, 9vw, 5rem);
+    }
+
+    .about-image-wrapper {
+        padding-right: 20px;
+    }
+
+    .about-image {
+        height: 500px;
+    }
+
+    .pricing-card.featured {
+        transform: none;
+    }
+
+    .pricing-card.featured:hover {
+        transform: translateY(-8px);
+    }
+
+    .reservation-form {
+        padding: 30px;
+    }
+
+}
+
+
+/* =========================================
+   16. RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 767.98px) {
+
+    .section-padding {
+        padding: 65px 0;
+    }
+
+    .navbar {
+        padding: 14px 0;
+    }
+
+    .navbar-brand {
+        font-size: 1.45rem;
+    }
+
+    .hero-content {
+        padding-top: 70px;
+    }
+
+    .hero-section {
+        min-height: 100svh;
+    }
+
+    .hero-section h1 {
+        font-size: clamp(2.8rem, 14vw, 4.3rem);
+    }
+
+    .hero-text {
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-info {
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 30px;
+    }
+
+    .about-image-wrapper {
+        padding-right: 12px;
+        padding-bottom: 20px;
+    }
+
+    .about-image {
+        height: 400px;
+    }
+
+    .experience-badge {
+        left: 5px;
+        bottom: 30px;
+        padding: 15px 18px;
+    }
+
+    .experience-badge strong {
+        font-size: 2rem;
+    }
+
+    .about-stats {
+        gap: 35px;
+    }
+
+    .service-card {
+        padding: 30px 25px;
+    }
+
+    .pricing-card {
+        padding: 35px 25px;
+    }
+
+    .testimonial-card {
+        padding: 30px 35px 70px;
+    }
+
+    .testimonial-card p {
+        font-size: 1.2rem;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 5%;
+    }
+
+    .reservation-form {
+        padding: 25px 20px;
+    }
+
+    .map-wrapper iframe {
+        height: 320px;
+    }
+
+    .footer {
+        padding-top: 55px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 35px;
+    }
+
+}
+
+
+/* =========================================
+   17. SMALL MOBILE
+========================================= */
+
+@media (max-width: 419.98px) {
+
+    .hero-section h1 {
+        font-size: 2.7rem;
+    }
+
+    .hero-label {
+        font-size: 0.68rem;
+        letter-spacing: 2px;
+    }
+
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+
+    .about-image {
+        height: 340px;
+    }
+
+    .experience-badge {
+        padding: 12px 15px;
+    }
+
+    .experience-badge strong {
+        font-size: 1.7rem;
+    }
+
+    .experience-badge span {
+        font-size: 0.65rem;
+    }
+
+    .about-stats {
+        gap: 25px;
+    }
+
+    .about-stats strong {
+        font-size: 1.6rem;
+    }
+
+    .testimonial-card {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .reservation-form h3 {
+        font-size: 1.7rem;
+    }
+}
