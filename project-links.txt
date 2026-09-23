@@ -1,0 +1,16 @@
+SAVORA — Responsive Restaurant Landing Page
+
+Student Name:
+Hira Siddiqui
+
+GitHub Repository:
+https://github.com/HiraSiddiquiii/tsg-savora-restaurant
+
+Live Website:
+https://tsg-savora-restaurant.vercel.app/
+
+Lighthouse:
+Performance: 100
+Accessibility: 96
+Best Practices: 96
+SEO: 91
